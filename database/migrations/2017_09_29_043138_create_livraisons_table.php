@@ -3,20 +3,20 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateLivraisonTable extends Migration {
+class CreateLivraisonsTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('livraison', function(Blueprint $table) {
+		Schema::create('livraisons', function(Blueprint $table) {
 			$table->increments('id_livraison');
-			$table->double('Distance');
-			$table->boolean('Statut');
+			$table->double('distance');
+			$table->boolean('statut');
 			$table->integer('id_commande')->unsigned();
 		});
 	}
 
 	public function down()
 	{
-		Schema::drop('livraison');
+		Schema::drop('livraisons');
 	}
 }

@@ -1,6 +1,9 @@
 <?php 
 
-class ChaussureController extends BaseController {
+namespace App\Http\Controllers;
+
+class ChaussureController extends Controller 
+{
 
   /**
    * Display a listing of the resource.

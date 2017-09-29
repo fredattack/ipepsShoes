@@ -2,15 +2,18 @@
 
 namespace App;
 
-class Taille extends Eloquent {
+use Illuminate\Database\Eloquent\Model;
 
-	protected $table = 'taille';
-	public $timestamps = false;
-	protected $fillable = array('id_chaussure', 'Pointure', 'Stock');
+class Taille extends Model 
+{
 
-	public function chaussure()
-	{
-		return $this->belongsTo('App\Chaussure');
-	}
+    protected $table = 'tailles';
+    public $timestamps = false;
+    protected $fillable = array('id_chaussure', 'pointure', 'stock');
+
+    public function chaussure()
+    {
+        return $this->belongsTo('App\Chaussure');
+    }
 
 }

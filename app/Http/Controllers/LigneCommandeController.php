@@ -1,6 +1,9 @@
 <?php 
 
-class LigneCommandeController extends BaseController {
+namespace App\Http\Controllers;
+
+class LigneCommandeController extends Controller 
+{
 
   /**
    * Display a listing of the resource.

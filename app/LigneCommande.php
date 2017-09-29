@@ -2,15 +2,18 @@
 
 namespace App;
 
-class LigneCommande extends Eloquent {
+use Illuminate\Database\Eloquent\Model;
 
-	protected $table = 'ligneCommande';
-	public $timestamps = false;
-	protected $fillable = array('Quantite', 'id_commande', 'Taille', 'id_chaussure');
+class LigneCommande extends Model 
+{
 
-	public function commande()
-	{
-		return $this->belongsTo('App\Commande');
-	}
+    protected $table = 'ligneCommandes';
+    public $timestamps = false;
+    protected $fillable = array('quantite', 'id_commande', 'taille', 'id_chaussure');
+
+    public function commande()
+    {
+        return $this->belongsTo('App\Commande');
+    }
 
 }

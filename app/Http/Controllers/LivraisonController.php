@@ -1,6 +1,9 @@
 <?php 
 
-class LivraisonController extends BaseController {
+namespace App\Http\Controllers;
+
+class LivraisonController extends Controller 
+{
 
   /**
    * Display a listing of the resource.

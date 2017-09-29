@@ -3,23 +3,23 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateCommandeTable extends Migration {
+class CreateCommandesTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('commande', function(Blueprint $table) {
+		Schema::create('commandes', function(Blueprint $table) {
 			$table->increments('id_commande');
 			$table->timestamps();
 			$table->integer('id_user')->unsigned();
 			$table->integer('id_livraison')->unsigned();
-			$table->double('Montant');
-			$table->string('Montant_livraison');
-			$table->boolean('Payer');
+			$table->double('montant');
+			$table->string('montant_livraison');
+			$table->boolean('payer');
 		});
 	}
 
 	public function down()
 	{
-		Schema::drop('commande');
+		Schema::drop('commandes');
 	}
 }

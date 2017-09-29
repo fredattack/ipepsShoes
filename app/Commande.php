@@ -2,25 +2,23 @@
 
 namespace App;
 
-class Commande extends Eloquent {
+use Illuminate\Database\Eloquent\Model;
 
-	protected $table = 'commande';
-	public $timestamps = true;
-	protected $fillable = array('id_user', 'id_livraison', 'Montant', 'Montant_livraison', 'Payer');
+class Commande extends Model 
+{
 
-	public function ligneCommande()
-	{
-		return $this->hasMany('App\LigneCommande');
-	}
+    protected $table = 'commandes';
+    public $timestamps = true;
+    protected $fillable = array('id_user', 'id_livraison', 'montant', 'montant_livraison', 'payer');
 
-	public function livraison()
-	{
-		return $this->hasOne('App\Livraison');
-	}
+    public function ligneCommande()
+    {
+        return $this->hasMany('App\LigneCommande');
+    }
 
-	public function User()
-	{
-		return $this->hasOne('App\Utilisateur');
-	}
+    public function livraison()
+    {
+        return $this->hasOne('App\Livraison');
+    }
 
 }

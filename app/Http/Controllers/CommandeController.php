@@ -1,6 +1,9 @@
 <?php 
 
-class CommandeController extends BaseController {
+namespace App\Http\Controllers;
+
+class CommandeController extends Controller 
+{
 
   /**
    * Display a listing of the resource.

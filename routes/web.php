@@ -18,3 +18,21 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+/*
+---------------------------------------------------------------------
+|
+|Admim
+|
+|--------------------------------------------------------------------
+*/
+
+
+Route::resource('commande', 'CommandeController');
+Route::resource('lignecommande', 'LigneCommandeController');
+Route::resource('livraison', 'LivraisonController');
+Route::resource('chaussure', 'ChaussureController');
+Route::resource('taille', 'TailleController');
+

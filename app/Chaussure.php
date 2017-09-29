@@ -2,15 +2,18 @@
 
 namespace App;
 
-class Chaussure extends Eloquent {
+use Illuminate\Database\Eloquent\Model;
 
-	protected $table = 'chaussure';
-	public $timestamps = false;
-	protected $fillable = array('Marque', 'Couleur', 'Promotion', 'Reduction', 'Sexe', 'Type', 'Modele');
+class Chaussure extends Model 
+{
 
-	public function taille()
-	{
-		return $this->hasMany('App\Taille');
-	}
+    protected $table = 'chaussures';
+    public $timestamps = false;
+    protected $fillable = array('marque', 'couleur', 'promotion', 'reduction', 'sexe', 'type', 'modele');
+
+    public function taille()
+    {
+        return $this->hasMany('App\Taille');
+    }
 
 }

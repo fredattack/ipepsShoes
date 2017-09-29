@@ -2,15 +2,18 @@
 
 namespace App;
 
-class Livraison extends Eloquent {
+use Illuminate\Database\Eloquent\Model;
 
-	protected $table = 'livraison';
-	public $timestamps = false;
-	protected $fillable = array('Distance', 'Statut', 'id_commande');
+class Livraison extends Model 
+{
 
-	public function commande()
-	{
-		return $this->belongsTo('App\Commande');
-	}
+    protected $table = 'livraisons';
+    public $timestamps = false;
+    protected $fillable = array('distance', 'statut', 'id_commande');
+
+    public function commande()
+    {
+        return $this->belongsTo('App\Commande');
+    }
 
 }

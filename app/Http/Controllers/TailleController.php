@@ -1,6 +1,9 @@
 <?php 
 
-class TailleController extends BaseController {
+namespace App\Http\Controllers;
+
+class TailleController extends Controller 
+{
 
   /**
    * Display a listing of the resource.
