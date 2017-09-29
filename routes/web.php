@@ -29,10 +29,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 |--------------------------------------------------------------------
 */
 
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('commande', 'CommandeController');
+    Route::resource('lignecommande', 'LigneCommandeController');
+    Route::resource('livraison', 'LivraisonController');
+    Route::resource('chaussure', 'ChaussureController');
+    Route::resource('taille', 'TailleController');
 
-Route::resource('commande', 'CommandeController');
-Route::resource('lignecommande', 'LigneCommandeController');
-Route::resource('livraison', 'LivraisonController');
-Route::resource('chaussure', 'ChaussureController');
-Route::resource('taille', 'TailleController');
-
+});
