@@ -11,9 +11,11 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Auth::routes();
 
@@ -37,8 +39,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('chaussure', 'ChaussureController');
     Route::resource('taille', 'TailleController');
 
-    Route::get('/',function (){
-        return view('Admin.home');
-    });
+    Route::get('/home','AdminController@index')->name('adminHome');
 
 });
