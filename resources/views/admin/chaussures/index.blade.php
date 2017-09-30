@@ -26,6 +26,7 @@
 @endsection
 
 @section('section')
+
 @endsection
 
 @section('footer')

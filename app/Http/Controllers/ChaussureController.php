@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 
 use App\Chaussure;
 use App\Commande;
+use App\Http\Request;
 
 class ChaussureController extends Controller
 {
 
   /**
-   * Display a listing of the resource.
+   * //
    *
-   * @return Response
+   * @return La liste de toutes les chaussures + ...
    */
   public function index() /*damien return $listeChaussures ( all) + $listeMarque + $listeTaille  */
   {
@@ -27,17 +28,18 @@ class ChaussureController extends Controller
    */
   public function create()
   {
-    
+
   }
 
   /**
-   * Store a newly created resource in storage.
+   * @param Une nouvelle chaussure
    *
-   * @return Response
+   * @return True, si ça s'est bien passé
    */
-  public function store()
+  public function store(Request $request)
   {
-    
+      $shoes = Chaussure::create($request->all());
+      return redirect('Admin.chaussures.index'); //TODO Ajouter la redirection vers l'ajout d'une chaussure
   }
 
   /**
@@ -65,12 +67,14 @@ class ChaussureController extends Controller
   /**
    * Update the specified resource in storage.
    *
-   * @param  int  $id
-   * @return Response
+   * @param  $id de la chaussure à mettre à jour
+   * @return $id de la chaussure modifiée
    */
-  public function update($id)
+  public function update($id, Request $request)
   {
-    
+    $shoes = Chaussure::findOrFail($id);
+    $shoes->update($request->all());
+    return redirect('Admin.chaussures.index', $id); //TODO Ajouter la redirection vers la page d'edition de chaussure
   }
 
   /**
