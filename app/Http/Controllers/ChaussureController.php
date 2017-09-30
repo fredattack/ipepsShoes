@@ -28,7 +28,7 @@ class ChaussureController extends Controller
    */
   public function create()
   {
-
+    // damien ici pour la redirection vers le formulaire de création de chaussure
   }
 
   /**
@@ -50,7 +50,7 @@ class ChaussureController extends Controller
    */
   public function show($id)
   {
-    
+    // damien ici pour afficher une chaussure spécifique
   }
 
   /**
@@ -61,7 +61,7 @@ class ChaussureController extends Controller
    */
   public function edit($id)
   {
-    
+   // damien c'est ici que va la redirection vers lapage d'édtition avec les info de la chaussure a update
   }
 
   /**
