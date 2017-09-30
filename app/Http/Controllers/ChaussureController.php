@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
-class ChaussureController extends Controller 
+
+use App\Chaussure;
+use App\Commande;
+
+class ChaussureController extends Controller
 {
 
   /**
@@ -12,7 +16,8 @@ class ChaussureController extends Controller
    */
   public function index() /*damien return $listeChaussures ( all) + $listeMarque + $listeTaille  */
   {
-    return view('admin.chaussures.index');
+      $ShoesAll = Chaussure::get();
+      return view('admin.chaussures.index',compact($ShoesAll));
   }
 
   /**
