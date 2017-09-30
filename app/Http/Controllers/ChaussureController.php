@@ -10,9 +10,9 @@ class ChaussureController extends Controller
    *
    * @return Response
    */
-  public function index()
+  public function index() /*damien return $listeChaussures ( all) + $listeMarque + $listeTaille  */
   {
-    
+    return view('admin.chaussures.index');
   }
 
   /**

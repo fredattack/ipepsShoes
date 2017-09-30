@@ -13,7 +13,7 @@
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Front.welcome');
 });
 
 
@@ -39,6 +39,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('chaussure', 'ChaussureController');
     Route::resource('taille', 'TailleController');
 
-    Route::get('/home','AdminController@index')->name('adminHome');
+    Route::get('/','AdminController@index')->name('adminHome');
 
 });
