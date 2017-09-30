@@ -80,12 +80,14 @@ class ChaussureController extends Controller
   /**
    * Remove the specified resource from storage.
    *
-   * @param  int  $id
+   * @param  $id de la chaussure à supprimer
    * @return Response
    */
   public function destroy($id)
   {
-    
+      $shoes = Chaussure::findOrFail($id);
+      $shoes->delete();
+      return redirect('Admin.chaussures.index'); //TODO Ajouter la redirection vers la page de suppresion
   }
   
 }
